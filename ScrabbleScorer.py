@@ -25,12 +25,12 @@ if __name__ == '__main__':
         multiplier = 1
 
         doubled = input('\nWill your word be on a double word space?\n')
-        if confirmation.__contains__(doubled):
+        if doubled.strip() in confirmation:
             double_spaces = input('\nHow many of these spaces are hit?\n')
             multiplier *= 2 * int(double_spaces)
 
         tripled = input('\nWill your word be on a triple word space?\n')
-        if confirmation.__contains__(tripled):
+        if tripled.strip() in confirmation:
             triple_spaces = input('\nHow many of these spaces are hit?\n')
             multiplier *= 3 * int(triple_spaces)
 
@@ -40,5 +40,5 @@ if __name__ == '__main__':
         print(f'{word.upper()} is worth {score * multiplier} points.\n')
 
         response = input('Do you want to score another word?\n')
-        if not confirmation.__contains__(response):
+        if not response.strip() in confirmation:
             break
